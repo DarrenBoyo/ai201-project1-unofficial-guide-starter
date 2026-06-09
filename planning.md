@@ -11,7 +11,7 @@
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
 
----
+-CS Course and Professor Reviews at Minnesota State University, Mankato
 
 ## Documents
 

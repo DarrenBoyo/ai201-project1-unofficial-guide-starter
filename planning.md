@@ -20,16 +20,16 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | Rate My Professors – Minnesota State University, Mankato|Student ratings and reviews of professors. |https://www.ratemyprofessors.com/school/559?utm_source=chatgpt.com |
+| 2 | MNSU CIS Faculty & Staff | Official directory of Computer Information Science faculty and staff. | https://cset.mnsu.edu/departments/computer-information-science/faculty-and-staff/?utm_source=chatgpt.com|
+| 3 | Reddit r/MNSU | Student discussions about classes, professors, and campus experiences. | https://www.reddit.com/r/mnsu/ |
+| 4 | MNSU CIS faculty page | MNSU CIS Faculty page| https://cset.mnsu.edu/departments/computer-information-science/faculty-and-staff/ |
+| 5 | Rate My Professors | Jonathan HardWick Review Page | https://www.ratemyprofessors.com/professor/1940059 |
+| 6 | Rate My Professors | Rushit Dave Review Page | https://www.ratemyprofessors.com/professor/2832629 |
+| 7 | Rate My Professors | Rebecca Bates Review Page | https://www.ratemyprofessors.com/professor/625846 |
+| 8 | Rate My Professors | Mansi Bhavsar Review Page | https://www.ratemyprofessors.com/professor/3108459 |
+| 9 | Rate My Professors | David Clisbee Review Page | https://www.ratemyprofessors.com/professor/3030073 |
+| 10 |Rate My Professors | Sarah Kruse Review Page | https://www.ratemyprofessors.com/professor/206994 |
 
 ---
 

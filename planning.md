@@ -40,13 +40,13 @@
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size:** Approximately 100–300 words
 
-**Overlap:**
+**Overlap:** 0-20 words
 
 **Reasoning:**
 
----
+-Because the knowledge base contains short, opinion-based reviews from Rate My Professors and Reddit, smaller chunk sizes are preferred. Using one review or comment per chunk preserves individual opinions and prevents unrelated experiences from being merged together. This improves retrieval precision by ensuring that retrieved chunks directly answer questions about specific professors, courses, workloads, grading styles, and student experiences.
 
 ## Retrieval Approach
 
@@ -58,11 +58,20 @@
 
 **Embedding model:**
 
+all-MiniLM-L6-v2 (via sentence-transformers)
+
+This model is lightweight, fast, and performs well on short text such as professor reviews and Reddit comments. Since the knowledge base consists primarily of brief, opinion-based documents, all-MiniLM-L6-v2 provides a good balance between retrieval quality and computational efficiency.
+
+
 **Top-k:**
+5
+
+The retrieval system will return the 5 most relevant chunks for each query. This provides enough evidence from multiple student reviews while avoiding excessive noise from less relevant comments.
+
 
 **Production tradeoff reflection:**
 
----
+-If cost were not a constraint, I would evaluate larger embedding models such as BGE-large or OpenAI's text-embedding-3-large. Larger models often capture semantic meaning more accurately and may improve retrieval for nuanced questions about teaching style, course difficulty, or workload. However, they require more storage, increase latency, and are more expensive to run. For this project, all-MiniLM-L6-v2 offers an effective balance between speed, resource usage, and retrieval accuracy for short student reviews and discussion posts.
 
 ## Evaluation Plan
 
@@ -71,13 +80,15 @@
      is right or wrong. "What are good dining halls?" is too vague.
      "What do students say about wait times at [dining hall name] during lunch?" is testable. -->
 
+## Evaluation Plan
+
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | What courses does the Computer Science B.S. program require students to complete? | The response should list core CS requirements such as programming, data structures, algorithms, computer architecture, software engineering, and required mathematics courses according to the MNSU catalog. |
+| 2 | What do students say about Rushit Dave's teaching style? | Students generally describe him as knowledgeable, helpful, and clear in explanations, with a focus on practical programming examples. |
+| 3 | What do students report about Jonathan Hardwick's courses? | Reviews commonly mention challenging coursework, high expectations, and strong subject knowledge. |
+| 4 | Which sources discuss student experiences with CS 201? | The system should identify relevant Reddit discussions, professor reviews, and course-related comments that mention CS 201. |
+| 5 | Where can students find official information about Computer Science faculty at MNSU? | The system should reference the Computer Science Faculty & Staff page and CIS Faculty & Staff directory on the MNSU website. |
 
 ---
 

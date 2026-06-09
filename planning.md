@@ -98,9 +98,11 @@ The retrieval system will return the 5 most relevant chunks for each query. This
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. **Noisy or inconsistent reviews**
+   Student reviews from Rate My Professors and Reddit are subjective and may contain conflicting opinions about the same professor or course. The system may retrieve a small number of reviews that do not accurately represent the overall student experience.
 
-2.
+2. **Off-topic retrieval**
+   A query about a specific Computer Science professor may retrieve unrelated Reddit discussions or reviews about other courses because of similar keywords. This could cause the system to generate inaccurate or irrelevant answers.
 
 ---
 
@@ -114,6 +116,49 @@ The retrieval system will return the 5 most relevant chunks for each query. This
 
 ---
 
+## Architecture
+
+```text
+┌─────────────────────┐
+│ Document Ingestion  │
+│ Sources:            │
+│ - Rate My Professors│
+│ - Reddit r/MNSU     │
+│ - MNSU Faculty Pages│
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│      Chunking       │
+│ Chunk Size:         │
+│ 100-300 words       │
+│ One review/comment  │
+│ per chunk           │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Embedding + Store   │
+│ Model:              │
+│ all-MiniLM-L6-v2    │
+│ Vector DB: ChromaDB │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│      Retrieval      │
+│ Similarity Search   │
+│ Top-k = 5           │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│     Generation      │
+│ LLM: Groq + Llama   │
+│ Answer + Sources    │
+└─────────────────────┘
+```
+
 ## AI Tool Plan
 
 <!-- For each part of the pipeline below, describe:
@@ -125,6 +170,18 @@ The retrieval system will return the 5 most relevant chunks for each query. This
      "I'll use AI to help me code" is not a plan.
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
+
+
+I plan to use AI tools such as ChatGPT and Claude to help implement specific parts of the pipeline, but I will use my `planning.md` as the main guide so the generated code matches my project design.
+
+| Pipeline part | AI tool use plan |
+|---|---|
+| Document Ingestion | I will prompt ChatGPT or Claude with my **Source Documents** table and the assignment requirement for document ingestion. I will ask it to help create a script that loads URLs or local text files, stores the source name, URL, and document text, and preserves metadata for citation later. |
+| Chunking | I will prompt Claude with my **Chunking Strategy** and **Risks and Failure Modes** sections. I will ask it to implement a `chunk_text()` function that uses small chunks, about 100–300 words, so short professor reviews and Reddit comments are not mixed together unnecessarily. |
+| Embedding + Vector Store | I will give the AI my **Retrieval Approach** section, including the embedding model `all-MiniLM-L6-v2` and vector store `ChromaDB`. I will ask it to help write code that embeds each chunk, saves it in ChromaDB, and includes metadata such as professor name, course, source, and URL. |
+| Retrieval | I will prompt ChatGPT or Copilot with my **Top-k** choice and **Evaluation Plan**. I will ask it to implement retrieval using `top-k = 5`, returning the most relevant chunks along with their source information. |
+| Generation | I will give the AI my **Example Questions**, **Expected Answers**, and requirement for source-grounded answers. I will ask it to write a prompt template that tells the LLM to answer only from retrieved context and include source citations when possible. |
+| Testing and Evaluation | I will prompt the AI with my **Evaluation Plan** table and ask it to create simple tests that run the five test questions, compare the system output to the expected answer, and check whether sources are included. |
 
 **Milestone 3 — Ingestion and chunking:**
 

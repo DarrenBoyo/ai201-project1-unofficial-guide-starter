@@ -95,8 +95,7 @@
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
 | 1 | What resources help students succeed in MNSU CS courses? | Not Covered | I don't have enough information in the documents.
 | Relevant | Accurate |
-| 2 | What do students say about Rushit Dave's teaching style? | Clear explanations and organized instruction | Engaging, making students feel comfortable to ask questions (SOURCE 1)
-- Inspirational and caring, showing genuine interest in students' success (SOURCE 2) | Relevant | Accurate |
+| 2 | What do students say about Rushit Dave's teaching style? | Clear explanations and organized instruction | Engaging, making students feel comfortable to ask questions (SOURCE 1) | Relevant | Accurate |
 | 3 | What do students report about Jonathan Hardwick's courses? | Information about workload and course difficulty | Students report that Jonathan Hardwick's courses are "Lecture heavy" and "Test heavy" with "a lot of reading involved | Relevant | Accurate |
 | 4 | What resources help students succeed in MNSU CS courses? | Not Covered | I don't have enough information in the documents. | Off-Target | Partially Accurate|
 | 5 | Where can students find information about CIS faculty? | Faculty directory page | I don't have enough information in the documents. | Off Target | Partially Accurate|

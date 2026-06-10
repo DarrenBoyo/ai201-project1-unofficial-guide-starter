@@ -1,0 +1,89 @@
+Professor: Rushit Dave
+Source: Rate My Professors
+URL: https://www.ratemyprofessors.com/professor/2832629
+
+Review:
+CS301
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: B
+Textbook: Yes
+the only difficult parts were the tests, for which i reccommend to ask him tons of questions beforehand
+Participation matters
+Lecture heavy
+Accessible outside class
+
+
+Review:
+CS303
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Textbook: N/A
+Rushit is very smart and a good teacher. He employs a "tough love" kind of motivation, which isn't bad, but can sometimes make you feel defeated and/or not cut out for CS if what you needed was actual support. Tests are always annoyingly vague (ex: "Discuss [topic] in detail and provide examples") but he makes up for it by being a lenient grader.
+Participation matters
+Lecture heavy
+
+
+Review:
+CS303
+For Credit: Yes
+Attendance: Mandatory
+Grade: A
+Textbook: N/A
+A lot of reading involved and mostly self studying. Not much explanation in class. His exam are easy and based on the slides.
+Get ready to read
+Participation matters
+Graded by few things
+
+
+Review:
+CS303
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: N/A
+Despite of very theory-heavy course, he makes it very interesting. You can tell the students feel very comfortable in his class. One of the most easygoing professors in the CS program.
+Get ready to read
+Participation matters
+Beware of pop quizzes
+
+Review:
+CS301
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A-
+Textbook: Yes
+Rushit stands out as one of the most exceptional instructors I've encountered during my tenure at MSU. From day one, it was clear that he is not only knowledgeable in computer science but also genuinely passionate about teaching.
+Participation matters
+Gives good feedback
+Beware of pop quizzes
+
+Review:
+CS303
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+Rushit is a great professor. His class is engaging and you can tell he genuinely wants you to learn. Students are comfortable with him to ask questions and have conversations in the middle of the lecture. It's a conceptual class so there's mostly reading involved but his exams are only from his slides and he goes over his slides very well!
+Lecture heavy
+
+Review:
+CS301
+Dec 5th, 2024
+For Credit: Yes
+Attendance: Mandatory
+Would Take Again: Yes
+Grade: A
+Textbook: Yes
+Rushit is a great Professor. You can tell he really cares for his students to do well. He gives feedback promptly. He is most students favorite professor in CS program. I would definitely recommend taking class with him.
+Participation matters
+Inspirational
+Accessible outside class
+
+
+

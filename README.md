@@ -15,6 +15,9 @@
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
 
 ---
+This system covers student opinions and experiences related to Computer Science courses and professors at Minnesota State University, Mankato. The domain includes teaching style, workload, exam difficulty, grading practices, course expectations, and faculty information.
+
+This knowledge is valuable because official course descriptions and faculty profiles do not capture the student experience. Students often want information about how professors teach, how difficult assignments are, and what strategies help students succeed. Much of this information is scattered across review sites, Reddit discussions, and informal online conversations rather than official university resources.
 
 ## Document Sources
 
@@ -22,19 +25,18 @@
      Be specific: include URLs, subreddit names, forum thread titles, or file names.
      Aim for variety — sources that together cover different subtopics or perspectives. -->
 
-| # | Source | Type | URL or file path |
-|---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
-
+| # | Source | Description | URL or location |
+|---|--------|-------------|-----------------|
+| 1 | Rate My Professors – Minnesota State University, Mankato|Student ratings and reviews of professors. |https://www.ratemyprofessors.com/school/559?utm_source=chatgpt.com |
+| 2 | MNSU CIS Faculty & Staff | Official directory of Computer Information Science faculty and staff. | https://cset.mnsu.edu/departments/computer-information-science/faculty-and-staff/?utm_source=chatgpt.com|
+| 3 | Reddit r/MNSU | Student discussions about classes, professors, and campus experiences. | https://www.reddit.com/r/mnsu/ |
+| 4 | MNSU CIS faculty page | MNSU CIS Faculty page| https://cset.mnsu.edu/departments/computer-information-science/faculty-and-staff/ |
+| 5 | Rate My Professors | Jonathan HardWick Review Page | https://www.ratemyprofessors.com/professor/1940059 |
+| 6 | Rate My Professors | Rushit Dave Review Page | https://www.ratemyprofessors.com/professor/2832629 |
+| 7 | Rate My Professors | Rebecca Bates Review Page | https://www.ratemyprofessors.com/professor/625846 |
+| 8 | Rate My Professors | Mansi Bhavsar Review Page | https://www.ratemyprofessors.com/professor/3108459 |
+| 9 | Rate My Professors | David Clisbee Review Page | https://www.ratemyprofessors.com/professor/3030073 |
+| 10 |Rate My Professors | Sarah Kruse Review Page | https://www.ratemyprofessors.com/professor/206994 |
 ---
 
 ## Chunking Strategy
@@ -46,13 +48,16 @@
      - Any preprocessing you did before chunking (e.g., stripping HTML, removing headers)
      - What your final chunk count was across all documents -->
 
-**Chunk size:**
+**Chunk size:** Approximately 300 words maximum per chunk.
 
-**Overlap:**
+**Overlap:** 15-word overlap for chunks that exceed the maximum size.
 
 **Why these choices fit your documents:**
 
-**Final chunk count:**
+Most of the documents consist of short professor reviews, Reddit comments, and faculty descriptions. Keeping reviews as individual chunks preserves complete opinions and allows retrieval to return specific feedback from students. Reddit threads are chunked by comment boundaries whenever possible so that individual viewpoints remain intact. Faculty pages are chunked by faculty member section rather than arbitrary paragraph boundaries. HTML tags, navigation text, repeated headers, and boilerplate content are removed before chunking.
+
+
+**Final chunk count:** 53 Chunks
 
 ---
 
@@ -64,10 +69,10 @@
      Consider: context length limits, multilingual support, accuracy on domain-specific text,
      latency, and local vs. API-hosted. -->
 
-**Model used:**
+**Model used:** all-MiniLM-L6-v2 from Sentence Transformers.
 
 **Production tradeoff reflection:**
-
+I chose all-MiniLM-L6-v2 because it runs locally, requires no API key, and provides strong semantic search performance for short text such as reviews and comments. If cost were not a concern, I would evaluate larger embedding models that provide better semantic understanding and improved retrieval quality. I would also consider multilingual support, context length, latency, hosting requirements, and performance on opinion-based educational content before selecting a production model.
 ---
 
 ## Grounded Generation

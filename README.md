@@ -93,11 +93,13 @@
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | What resources help students succeed in MNSU CS courses? | Not Covered | I don't have enough information in the documents.
+| Relevant | Accurate |
+| 2 | What do students say about Rushit Dave's teaching style? | Clear explanations and organized instruction | Engaging, making students feel comfortable to ask questions (SOURCE 1)
+- Inspirational and caring, showing genuine interest in students' success (SOURCE 2) | Relevant | Accurate |
+| 3 | What do students report about Jonathan Hardwick's courses? | Information about workload and course difficulty | Students report that Jonathan Hardwick's courses are "Lecture heavy" and "Test heavy" with "a lot of reading involved | Relevant | Accurate |
+| 4 | What resources help students succeed in MNSU CS courses? | Not Covered | I don't have enough information in the documents. | Off-Target | Partially Accurate|
+| 5 | Where can students find information about CIS faculty? | Faculty directory page | I don't have enough information in the documents. | Off Target | Partially Accurate|
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate
@@ -118,12 +120,16 @@
      results from an unrelated review" is an explanation. -->
 
 **Question that failed:**
+What resources help students succeed in MNSU CS courses?
 
 **What the system returned:**
+The system returned a mixture of Reddit advice and professor review content. Some retrieved chunks were only loosely related to study resources.
 
 **Root cause (tied to a specific pipeline stage):**
+The retrieval stage returned chunks that matched "success" semantically but were focused on professors rather than study resources. The embedding model associated related educational concepts and ranked them highly.
 
 **What you would change to fix it:**
+I would add more Reddit and discussion-based documents focused specifically on student success strategies. I would also experiment with metadata filtering and retrieval reranking to improve relevance.
 
 ---
 
@@ -133,8 +139,10 @@
      Answer both questions with at least 2–3 sentences each. -->
 
 **One way the spec helped you during implementation:**
+The planning document forced me to think carefully about chunking before writing code. Deciding how to handle professor reviews, Reddit comments, and faculty pages in advance made implementation easier and reduced trial-and-error during development.
 
 **One way your implementation diverged from the spec, and why:**
+My original plan assumed all sources would be available through URLs, but I ultimately converted much of the content into local text files for easier ingestion and consistent formatting. This simplified cleaning and chunking while still preserving the underlying information.
 
 ---
 
@@ -151,12 +159,12 @@
 
 **Instance 1**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* My chunking strategy, document list, and project requirements.
+- *What it produced:* An ingestion and chunking pipeline that cleaned documents and generated chunks.
+- *What I changed or overrode:* I modified the chunking logic so faculty pages were chunked by faculty member sections, Reddit threads preserved comment boundaries, and professor reviews remained one review per chunk whenever possible.
 
 **Instance 2**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI:* My retrieval architecture, embedding model choice, and ChromaDB requirements.
+- *What it produced:* Embedding and retrieval code using all-MiniLM-L6-v2 and ChromaDB.
+- *What I changed or overrode:* I added metadata storage, source attribution, duplicate-chunk detection, and improved course code extraction to better support retrieval and grounding.

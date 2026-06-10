@@ -86,7 +86,13 @@ I chose all-MiniLM-L6-v2 because it runs locally, requires no API key, and provi
 
 **System prompt grounding instruction:**
 
+The prompt instructs the model to answer only using the retrieved context and explicitly states:
+
+"Answer ONLY using the retrieved context. Do NOT use outside knowledge. If the answer is not contained in the context, say: 'I don't have enough information in the documents.'"
+
 **How source attribution is surfaced in the response:**
+
+After retrieval, source names are collected programmatically from the retrieved chunks and appended to the final answer. This guarantees that every answer includes the sources used rather than relying on the language model to generate citations correctly.
 
 ---
 
